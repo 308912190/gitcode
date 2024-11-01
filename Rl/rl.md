@@ -1,4 +1,4 @@
-# 11.1复习model base
+# 11.1复习model base  
 ## 值迭代算法（value iteration algorithm）：第三章的贝尔曼最优公式中，求解贝尔曼最优公式的算法实际上就是值迭代算法。  
 1.列q 表（q-table），q(s, a) 的表达式  
 2.k=0，先选取 v0=0，可以任意选取，然后把 v0 带入刚才的 q-table 当中去；
