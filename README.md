@@ -1,8 +1,8 @@
 # reading-notes  
 ## path planning  
-[a relative link](动力学约束下的路径规划.md)  
-[a relative link](基于采样的路径规划.md)  
-[a relative link](基于搜索的路径规划.md)  
+[基于采样的路径规划](path planning/基于采样的路径规划.md)  
+[动力学约束下的路径规划](path planning/动力学约束下的路径规划.md)  
+[基于搜索的路径规划](path planning/基于搜索的路径规划.md)  
 ## RL  
-[a relative link](rl.md)  
+[rl](RL/rl.md)  
 ## cpp
