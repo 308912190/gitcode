@@ -16,4 +16,19 @@ Minimum snap: 最小化差速推力，节省能量
 ![image](https://github.com/user-attachments/assets/92cc95fd-09d1-41f8-8a96-3b2a1779d927)  
 
 # 3.Minimum Snap轨迹生成  
+![image](https://github.com/user-attachments/assets/eb02998b-a07e-4860-9c2f-990106428116)  
+每个段都是一个多项式；每个分段的多项式都是相同的阶次，这样对于问题的求解比较简单； 每一段的时间间隔必须是已知的。  
+构建约束方程  
+![image](https://github.com/user-attachments/assets/15654d40-8d91-4a0a-b290-737511c5ab4f)  
+![image](https://github.com/user-attachments/assets/93129ac4-e4d7-4a13-a505-212d4d6ac78b)  
+![image](https://github.com/user-attachments/assets/32036270-2648-44d0-97ab-4abb494bd482)  
+![image](https://github.com/user-attachments/assets/e3c6fa34-9ea5-418c-9a69-c1a3e2778b85)  
 
+# 4.闭式求解Minimum Snap  
+![image](https://github.com/user-attachments/assets/2e4c2d03-c727-466a-bba1-65dcce572e4c)  
+
+
+
+
+
+ 
