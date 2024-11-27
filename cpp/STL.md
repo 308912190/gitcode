@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/c9f4b995-5536-47bc-b3b6-c79c7cb03df7)# C++的STL
 ## 1.1 STL基本概念  
 ① STL(Standard Template Library，标准模板库)  
 ② STL 从广义上分为：容器(container)、算法(algorithm)、迭代器(iterator)  
