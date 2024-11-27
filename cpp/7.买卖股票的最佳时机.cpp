@@ -1,23 +1,13 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>  
-using namespace std;
-
-void printvector(vector<int>& v) {
-    for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-        cout << *it << endl;
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int minprice=INT_MAX;
+        int n=(int)prices.size();
+        int maxprofit=0;
+        for(int i=0;i<n;i++){
+            minprice=min(minprice,prices[i]);
+            maxprofit=max(maxprofit,prices[i]-minprice);
+            }
+        return maxprofit;
     }
-}
-
-void test01() {
-    vector<int> v1;
-    for (int i = 0; i < 10; i++) {
-        v1.push_back(i);
-    }
-    printvector(v1);  // print all numbers from 0 to 9
-}
-
-int main() {
-    test01();
-    return 0;
-}
+};
