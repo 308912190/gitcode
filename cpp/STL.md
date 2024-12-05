@@ -75,3 +75,25 @@ str.erase(1, 3); //从第“1”个位置起，删3个
 string email = "zhangsan@sina.com";  //从邮件地址中获取 用户名称  
 int pos = email.find("@");   //pos=8
 string usrName = email.substr(0, pos);  
+## 2.3 set容器  
+### 2.3.1 简介  
+① set容器中所有元素在插入时自动被排序。  
+② set容器和multiset容器属于关联式容器，底层结构用二叉树实现。 
+③ set容器与multiset容器区别： 
+set容器不允许容器中有重复的元素。 
+multiset容器允许容器中有重复的元素  
+### 2.3.2 构造赋值  
+set<int>s1;  
+//插入数据  只有insert方式s1.insert(10);    
+//拷贝构造  set<int>s2(s1);  
+//赋值  set<int>s3;  s3 = s2;  
+### 2.3.3 大小和交换  
+s1.swap(s2);  s1.empty()  s1.size()  
+### 2.3.4 插入和删除  
+clear(); //清除所有元素。  
+erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。  
+erase(beg,end); //删除区间[beg,end)的所有元素，返回下一个元素的迭代器。  
+erase(elem); //删除容器中值为elem的元素。   
+### 2.3.5 查找和统计  
+find(key); //查找key是否存在，若存在，返回该键的元素的迭代器，若不存在，返回set.end();  
+cout(key); //统计key的元素个数。  
