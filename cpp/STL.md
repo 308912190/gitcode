@@ -26,6 +26,7 @@ vector<int>v3(10, 100); //这是10个100，不是100个10
 vector<int>v4(v3);  
 ### 2.1.2 赋值  
 v3.assign(v1.begin(), v1.end());  //提供两个迭代器，两个迭代器区间中的元素都赋值给vector容器，区间为前闭后开   
+![1733400718299](https://github.com/user-attachments/assets/42f8625e-24ec-4056-ac16-8b7a4d501811)  
 v4.assign(10, 100);  
 ### 2.1.3 容量和大小   
 v1.resize(15);  //如果重新指定的比原来长了，默认用0填充新的位置  
