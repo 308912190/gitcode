@@ -4,12 +4,16 @@
 ③ 容器和算法之间通过迭代器进行无缝连接。  
 ④ STL 几乎所有的代码都采用了模板类或者模板函数  
 ## 1.2 STL六大部件  
-容器：各种数据结构，如vector、list、deque、set、map等，用来存放数据。
-算法：各种常用的算法，如sort、find、copy、for_each等。
-迭代器：扮演了容器与算法之间的胶合剂。（类似于指针）
-仿函数：行为类似函数，可作为算法的某种策略。
-适配器：一种用来修饰容器或者仿函数或迭代器接口的东西。
-空间配置器：负责空间的配置与管理。
+![image](https://github.com/user-attachments/assets/e67a650e-e57c-430c-b3c2-65bc23a93736)  
+![image](https://github.com/user-attachments/assets/33e36ac7-c00c-46f8-a022-4f5dc4a8536e)  
+1.一个容器vector  
+2.使用vector时，使用分配器分配内存  
+3.使用vi.begin(),vi.end()即迭代器，作为算法的参数  
+4.使用count_if算法  
+5.使用仿函数less()  
+6.使用函数适配器来对我们算法的结果进行进一步筛选（not1, bind2nd） 
+## 2.0 容器  
+![1733399944720](https://github.com/user-attachments/assets/28d279ce-2eb2-4fec-a584-fb16615db614)  
 ## 2.1 vector容器  
 ① vector数据结构和数组非常相似，也称为单端数组。  
 ② vector与普通数组区别：不同之处在于数组是静态空间，而vector可以动态扩展。  
@@ -22,6 +26,7 @@ vector<int>v3(10, 100); //这是10个100，不是100个10
 vector<int>v4(v3);  
 ### 2.1.2 赋值  
 v3.assign(v1.begin(), v1.end());  //提供两个迭代器，两个迭代器区间中的元素都赋值给vector容器，区间为前闭后开   
+![1733400718299](https://github.com/user-attachments/assets/42f8625e-24ec-4056-ac16-8b7a4d501811)  
 v4.assign(10, 100);  
 ### 2.1.3 容量和大小   
 v1.resize(15);  //如果重新指定的比原来长了，默认用0填充新的位置  
@@ -97,3 +102,44 @@ erase(elem); //删除容器中值为elem的元素。
 ### 2.3.5 查找和统计  
 find(key); //查找key是否存在，若存在，返回该键的元素的迭代器，若不存在，返回set.end();  
 cout(key); //统计key的元素个数。  
+## 2.4 map容器  
+### 2.4.1 简介  
+① map容器中的所有元素都是pair。  
+② pair中第一个元素为key(键值)，起到索引作用，第二个元素为value(实值)。  
+③ 所有元素都会根据元素的键值自动排序。  
+④ map容器和multimap容器属于关联式容器，底层结构是用二叉树实现。  
+⑤ map容器可以根据key值快速找到value值。  
+⑥ map和multimap区别：  
+map不允许容器中有重复key值元素。  
+mutimap运行容器中有重复的key值元素。  
+## 2.4.2 构造赋值  
+1.pair对组的创建  
+① 功能描述：成对出现的数据，利用对组可以返回两个数据。  
+② 两种创建方式：  
+pair<type,type> p (value1, value2);   
+pair<type,type> p = make_pair(value1,value2);   
+
+map<int, int>m;    m.insert(pair<int, int>(1, 10));   //1为key；10为value  
+//拷贝构造 map<int, int>m2(m);  
+//赋值  map<int, int>m3; m3 = m2;  
+## 2.4.3 大小交换  
+size(); //返回容器中元素的数目  
+empty(); //判断容器是否为空。  
+swap(st); //交换两个集合容器。  
+## 2.4.4 插入删除  
+插值：
+//第一种：m.insert(pair<int, int>(1, 10));   
+//第二种：m.insert(make_pair(2, 10));  
+//第三种：m.insert(map<int, int>::value_type(3, 30));  //map容器下为"值"为(3,30)  
+//第四种：m[4] = 40;   
+clear(); //清除所有元素。  
+erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。  
+erase(beg,end); //删除区间[beg,end)的所有元素，返回下一个元素的迭代器。  
+erase(key); //删除容器中值为key的元素。  
+### 2.4.5 查找统计    
+find(key); //查找key是否存在，若存在，返回该键的元素的迭代器；若不存在，返回set.end();  
+cout(key); //统计key的元素个数。  
+### 2.4.6 排序  
+① map容器默认排序规则为按照key值进行从小到大排序，利用仿函数，可以改变排序规则。  
+② 利用仿函数可以指定map容器的排序规则。  
+③ 对于自定义数据类型，map必须要指定排序规则，同set容器。  
